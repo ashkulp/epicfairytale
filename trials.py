@@ -1,3 +1,4 @@
+streamlit run trials.py
 class Person:
 
     def __init__(self, weapon=None, money=None, agility=None, health=None, species=None, morality=None,height=None):
