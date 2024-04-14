@@ -1,4 +1,3 @@
-st.set_page_config("instructions")
 import time
 import streamlit as st
 class Person:
@@ -63,6 +62,7 @@ class Person:
         return str(self._species)+":\n "+ "Height: "+str(self._height)+"\n Weapon:" +str(self._weapon)+"\n Agility: "+str(self._agility)+"\n Money: "+ str(self._money)+"\n Health: "+ str(self._health)+"\n Morality: "+str(self._morality)
 
 def main():
+    st.set_page_config("instructions")
     instructions()
     user_char = st.text_input("What character would you like to be? Select 1 for princess, 2 for hobbit, 3 for witch, 4 for elf: ")
     while user_char != 1 and user_char != 2 and user_char != 3 and user_char != 4:
