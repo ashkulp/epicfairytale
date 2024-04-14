@@ -315,17 +315,13 @@ def task_1(user, comp):
         ahh=st.text_input("Will you help fix the fence or not (yes/no): ")
         if ahh=="yes":
             st.write ("In order to fix the fence you must hammer in all of the posts \n You will have to hammer in 6 nails, if you spell hammer wrong you will have failed to complete your task and lose morality points")
-            count=0
-            nail="correct"
-            while count<6 and nail=="correct":
-                write=st.text_input("Type out hammer: ")
-                if write=="hammer":
-                    nail="correct"
-                    count+=1
-                else:
-                    nail="not"
-                    st.write("you have failed the famer, she is crying in distress as all of her cows escape \n you have lost morality points")
-                    user.set_morality(-1)
+            write=st.text_input("Type out hammer: ")
+            if write=="hammer":
+                nail=="correct"
+            else:
+                nail="not"
+                st.write("you have failed the famer, she is crying in distress as all of her cows escape \n you have lost morality points")
+                user.set_morality(-1)
             if nail=="correct":
                 st.write("the farmer says, 'Thank you for fixing my fence! I will forever be grateful for your help.' \n You have gained moarality points")
                 user.set_morality(1)
