@@ -93,207 +93,316 @@ def main():
         epic_story(user)
     
 # Witch and Elf Storyline
-def epic_story(user):
-    print("The witch and the elf are neighbors who live together in the forest.")
-    print("They collectively decide that they want to make more friends, as they feel isolated from everyone else who lives in town.")
-    while user.get_health() <= 0:
-        task1()
-    while user.get_health() <= 0:
-        task2()
-    while user.get_health() <= 0:
-        task3()
-    while user.get_health() <= 0:
-        task4()
-    while user.get_health() <= 0:
-        task5()
+def epic_story(user, computer):
+    st.write("The witch and the elf are neighbors who live together in the forest.")
+    st.write("They collectively decide that they want to make more friends, as they feel isolated from everyone else who lives in town.")
+    if user.get_health() > 0:
+        sleep(3)
+        task1(user, computer)
+    if user.get_health() > 0:
+        sleep(3)
+        task2(user, computer)
+    if user.get_health() > 0:
+        sleep(3)
+        task3(user, computer)
+    if user.get_health() > 0:
+        sleep(3)
+        task4(user, computer)
+    if user.get_health() > 0:
+        sleep(3)
+        task5(user, computer)
 
-    def task1(user, computer):
-        print("𖠰↟𖠰𖠰", "The witch and the elf begin their journey in the forest.", "𖠰𖠰↟𖠰↟")
-        print("They're walking together when all of a sudden, a girl in a red cape runs by.")
-        print(user.get_species() + ": What was that?")
-        print(computer.get_species() + ": Uhhh... " + time(2), "I didn't see anything?")
-        print("The girl runs by again but this time a wolf is chasing her.")
-        print("Tiny Crimson Commuting Cowl: HELP! PLEASE! HE'S TRYING TO EAT ME!!")
-        help = input("Do you help? (y/n) ")
+def task1(user, computer):
+        st.write("𖠰↟𖠰𖠰", "The witch and the elf begin their journey in the forest.", "𖠰𖠰↟𖠰↟")
+        sleep(1)
+        st.write("They're walking together when all of a sudden, a girl in a red cape runs by.")
+        sleep(1)
+        st.write(user.get_species(), ": What was that?")
+        sleep(1)
+        st.write(computer.get_species(), ": Uhhh... ")
+        sleep(2)
+        st.write(computer.get_species(), ": I didn't see anything?")
+        sleep(1)
+        st.write("The girl runs by again but this time a wolf is chasing her.")
+        sleep(1)
+        st.write("Girl: HELP! PLEASE! HE'S TRYING TO EAT ME!!")
+        sleep(1)
+        help = st.text_input("Do you help? (y/n) ")
         while help not in "yn":
-            help = input("Choose either y or n: ")
+            help = st.text_input("Choose either y or n: ")
         if help == "y":
-            print("Wolf: If you want to defeat me, you must answer this question.")
+            st.write("Wolf: If you want to defeat me, you must answer this question.")
             if user.get_species() == "Witch":
-                answer = input("What is the periodic symbol for Mercury?" )
+                answer = st.text_input("What is the periodic symbol for Mercury? ")
                 if answer == "Hg":
-                    print("You bludgeon the wolf to death with your broomstick. He's not eating NOBODY.")
+                    st.write("You bludgeon the wolf to death with your broomstick. He's not eating NOBODY.")
+                    sleep(1)
+                    st.write("Tiny Crimson: ...")
+                    sleep(3)
+                    st.write("Tiny Crimson: You killed him...")
+                    sleep(1)
+                    st.write("Tiny Crimson: THANK YOU!!! As a thank you, here's my cape.")
+                    user.set_friends("Tiny Crimson")
+                    sleep(3)
+                    st.write("You made a new friend!")
+                    st.write("Friends: ", user.get_friends())
                 else:
-                    print("You were mauled to death by the wolf...", time(2), "GAME OVER.")
+                    st.write("You were mauled to death by the wolf...")
+                    sleep(2)
+                    st.write("GAME OVER.")
                     user.set_health(0)
             if user.get_species() == "Elf":
-                answer = input("What is the derivative of cos(x)?")
+                answer = st.text_input("What is the derivative of cos(x)? ")
                 if answer == "-sin(x)":
-                    print("You shoot the wolf in the heart with an arrow.")
-            print("Tiny Crimson Commuting Cowl: ...", time(3), "You killed him...", time(1), "THANK YOU!!! As a thank you, here's my cape.")
-            user.set_friends("Tiny Crimson Commuting Cowl")
-            print("You made a new friend!")
-            print("Friends: " + user.get_friends())
+                    st.write("You shoot the wolf in the heart with an arrow.")
+                    st.write("Tiny Crimson: ...")
+                    sleep(3)
+                    st.write("Tiny Crimson: You killed him...")
+                    sleep(1)
+                    st.write("Tiny Crimson: THANK YOU!!! As a thank you, here's my cape.")
+                    user.set_friends("Tiny Crimson")
+                    sleep(3)
+                    st.write("You made a new friend!")
+                    st.write("Friends: ", user.get_friends())
         elif help == "n":
-            print("You were munched to death by the Wolf...", time(2), "GAME OVER.")
+            st.write("You were munched to death by the Wolf...")
+            sleep(2)
+            st.write("GAME OVER.")
             user.set_health(0)
         else:
-            print("THE WOLF CONSUMED THE GIRL! YOU'RE NEXT!!!!!")
+            st.write("THE WOLF CONSUMED THE GIRL! YOU'RE NEXT!!!!!")
             user.set_health(0)
-            print("GAME OVER")
+            st.write("GAME OVER")
 
-    def task2(user, computer):
-        print("After encountering the wolf, the witch and the elf enter the town.")
-        print(user.get_species() + ": I smell pie!")
-        print(computer.get_species() + ": There's a bakery down the street. Let's go!")
-        print("Baker: Hey kids! Will you help us make pie?")
-        help = input("Do you help them? (y/n) ")
+def task2(user, computer):
+        st.write("After encountering the wolf, the witch and the elf enter the town.")
+        sleep(3)
+        st.write(user.get_species(), ": I smell pie!")
+        sleep(3)
+        st.write(computer.get_species(), ": There's a bakery down the street. Let's go!")
+        sleep(3)
+        st.write("Baker: Hey kids! Will you help us make pie?")
+        help = st.text_input("Do you help them? (y/n) ")
         while help not in "yn":
-            help = input("Choose either y or n: ")
+            help = st.text_input("Choose either y or n: ")
         if help == "y":
-            answer = input("What are the first 6 digits of pi? ")
+            answer = st.text_input("What are the first 6 digits of pi? ")
             if answer == "3.14159":
-                print("Baker: You're a natural! This is the most delicious pie I've ever had.")
+                st.write("Baker: You're a natural! This is the most delicious pie I've ever had.")
                 user.set_friends("Baker")
                 user.set_friends("Baker's Wife")
-                print("You've made 2 new friends!")
-                print("Friends: " +  user.get_friends())
+                sleep(3)
+                st.write("You've made 2 new friends!")
+                st.write("Friends: ", user.get_friends())
             else:
-                print("Baker: This is horrendous! I've never tasted a pie this bad in my life. Get out!")
+                st.write("Baker: This is horrendous! I've never tasted a pie this bad in my life. Get out!")
         else:
-            print("The Baker is offended. He grabs a pie and stuffs it in your face.")
-            print("Baker: Get out of my sight.")
+            st.write("The Baker is offended. He grabs a pie and stuffs it in your face.")
+            st.write("Baker: Get out of my sight.")
             health = user.get_health() - 30
             user.set_health(health)
-            print("You've lost 30 health :(")
+            st.write("You've lost 30 health :(")
 
-    def task3(user, computer):
-        print("You see a figure approach you....", time(3))
-        print("Witch: Hello, I was wondering if you could come refurbish my candy house?")
-        print(user.get_species() + ": Oh! Well, yes of course!")
-        print("Witch: Thank you dears, just follow me.")
-        print("The Witch leads you through the forest.")
-        print(computer.get_species(), ": Do you see that? There's breadcrumbs all over.")
-        print(user.get_species(), ": Yeah, thats strange...")
-        print("Witch: Just head on in dears.")
-        print("The exterior of the candy house appears to have bite marks on it. You walk inside the house and immediately begin to sweat. It feels 10 degrees hotter.")
-        print("The interior of the house is covered in muddy footsteps. You notice the footsteps are small, almost as if it were a child.")
-        print(user.get_species(), ": Lets just get to cleaning.")
-        print(computer.get_species(), ": Alright, I'll start in the kitchen.", time(5), "... ", user.get_species(), " come here")
-        print("You walk into the kitchen, seeing ", computer.get_species(), "staring horrified at the oven. The room is boiling.")
-        answer = input("Open the oven? y/n ")
+def task3(user, computer):
+        st.write("The witch and the elf now make their way through town and spot a candy house.")
+        sleep(2)
+        st.write("You see a figure approach you....")
+        sleep(3)
+        st.write("Witch: Hello, I was wondering if you could come refurbish my candy house?")
+        sleep(2)
+        st.write(user.get_species(), ": Oh! Well, yes of course!")
+        sleep(2)
+        st.write("Witch: Thank you dears, just follow me.")
+        sleep(2)
+        st.write("The Witch leads you through the forest.")
+        sleep(2)
+        st.write(computer.get_species(), ": Do you see that? There's breadcrumbs all over.")
+        sleep(2)
+        st.write(user.get_species(), ": Yeah, thats strange...")
+        sleep(2)
+        st.write("Witch: Just head on in dears.")
+        sleep(5)
+        st.write("The exterior of the candy house appears to have bite marks on it. You walk inside the house and immediately begin to sweat. It feels 10 degrees hotter.")
+        sleep(4)
+        st.write("The interior of the house is covered in muddy footsteps. You notice the footsteps are small, almost as if it were a child.")
+        sleep(2)
+        st.write(user.get_species(), ": Lets just get to cleaning.")
+        sleep(2)
+        st.write(computer.get_species(), ": Alright, I'll start in the kitchen.")
+        sleep(3)
+        st.write("...", user.get_species(), " come here")
+        sleep(2)
+        st.write("You walk into the kitchen, seeing ", computer.get_species(), "staring horrified at the oven. The room is boiling.")
+        sleep(2)
+        answer = st.text_input("Open the oven? (y/n) ")
+        sleep(2)
         while answer not in "yn":
-            if answer == "y":
-                print("You open the oven and two small children scramble out. They're covered in burn marks.")
-                print(user.get_species(), ": Woah... are you two okay?")
-                print("Boy: GET AWAY FROM US!")
-                print("The boy swats burning charcoals from the oven. It burns your skin.")
-                health = user.get_health() - 20
-                user.set_health(health)
-                print(user.get_species(), ": OW!!")
-                print(computer.get_species(), ": Wait stop! We aren't going to hurt you I promise, trust me!")
-                print("Girl: You're a liar! AND you're a witch!")
-                if user.get_species() == "Witch":
-                    print(user.get_species(), ": I'm a good witch I promise, just tell me what happened.")
-                else:
-                    print(computer.get_species(), ": I'm a good witch I promise, just tell me what happened.")
-                print("Boy: It was the other Witch! She punished us for eating some of her candy house by trying to cook us!")
-                print("The door creaks open.")
-                answer = input("Fight the Witch? y/n")
-                while answer not in "yn":
-                    if answer == "y":
-                        answer1 = input("What kind of function is f(x)=x^4 ?")
-                        if answer1 == "quartic" or "Quartic":
-                            if user.get_species()=="Witch":
-                                print("You break the bottom of your broomstick off and drive it into the witches chest. She is dead.")
-                                print("The two children stare blankly for a moment", time(1))
-                                print("Boy: Woah. Thank you, you really are a good witch.")
-                                user.set_friends("Girl")
-                                user.set_friends("Boy")
-                            else:
-                                print("You take an arrow out of your quiver and charge at the witch, she parries, but your agility allows you to strike quickly again. You drive it into her chest and she falls. She is dead.")
-                                print("The two children stare blankly for a moment", time(1))
-                                print("Boy: Woah. Thank you. Here take this.")
-                                print("The boy hands you 10 gold coins.")
-                                money = user.set_money() + 10
-                                user.set_money(money)
-                                user.set_friends("Girl")
-                                user.set_friends("Boy")
-                    else:
-                        print("Woah buddy. That answer isn't valid. It has to be either y or n. Tsk. Tsk.")
-            else:
-                if answer == "n":
-                    print(user.get_species(), ": Let's just ignore it, we've got a job to do.")
-                    print("You quickly sweep and mop the house, dust the shelves, and shine the peppermint furniture.")
-                    print("The door creaks open.")
-                    print("Witch: Wow. It looks lovely in here!")
-                    print(computer.get_species(), ": Ha ha ha ha. ha yes thank you so much.")
-                    print("The Witch glares suspiciously at ", computer.get_species())
-                    
-                else:
-                    print("Woah buddy. That answer isn't valid. It has to be either y or n. Tsk. Tsk.")
-                
-    def task4(user, computer):
-        print ("IT IS I...")
-        time.sleep(3)
-        print("...Rumplestiltzkin!")
-        print("Now that you've found me, you must answer my riddles 3 or you may never escape! >:D")
-        print("First...")
-        time.sleep(3)
-        riddleoneanswer = input("What feels like green paint, smells like green paint, but isn't green paint? ")
-        if riddleoneanswer == ("paint"):
-            print("WOAH you've answered my riddle one... and got it correct, i'm honestly stunned. Just as a reward you will answer just one more riddle... MY RIDDLE ONE!")
-        else:
-            print("heh heh, just as i suspected you got it UNBELIEVABLY incorrect. The only way to save you now is to answer one final riddle. MY RIDDLE ONE!")
-        riddletwoanswer = input("What is my name heh heh? ")
-        if riddletwoanswer == ("rumplestiltzkin") or ("Rumplestiltzkin"):
-            print("....")
-            time.sleep(3)
-            print("I have absolutely no clue how you knew that...")
-            print("well a deal is a deal and I shall set you free, and with a reward I suppose")
-            treasure= treasure + random.randint(1,11)
-        else:
-            print("haha you absolute bafoon that is just not my name. now you must pay the price of prices! 3 pieces of gold in payment for my riddles 3")
-            treasure = treasure - 3
-
-    def task5(user, computer):
-        print("The witch and the elf have reached the end of town.")
-        print("Ahead of them lies the Queen's castle. But the gates are wide open.")
-        print(user.get_species() + ": If the gates are open I guess we can go inside.")
-        print("You enter the castle and find a tall spiral staircase. Someone is snoring really loud at the top.")
-        print(computer.get_species() + ": Who could that be?")
-        print("The two of you start climbing the stairs and discover a beautiful woman asleep in bed.")
-        print(user.get_species() + ": Who is this unconscious baddie?")
-        print(computer.get_species() + ": According to this note only a true love's kiss will wake her up.")
-        help = input("Do you kiss her? (y/n) ")
-        while help not in "yn":
-            help = input("Choose either y or n" )
-        if help == "y":
-            print("The princess's eyes flutter open.")
+            answer = st.text_input("Choose either y or n: ")
+        if answer == "y":
+            st.write("You open the oven and two small children scramble out. They're covered in burn marks.")
+            sleep(2)
+            st.write(user.get_species(), ": Woah... are you two okay?")
+            sleep(2)
+            st.write("Boy: GET AWAY FROM US!")
+            sleep(2)
+            st.write("The boy swats burning charcoals from the oven. It burns your skin.")
+            sleep(2)
+            health = user.get_health() - 20
+            user.set_health(health)
+            st.write(user.get_species(), ": OW!!")
+            st.write(computer.get_species(), ": Wait stop! We aren't going to hurt you, I promise. Trust me!")
+            sleep(2)
+            st.write("Girl: You're a liar! AND you're a witch!")
+            sleep(2)
             if user.get_species() == "Witch":
-                print("She lays eyes on you and screams. She grabs the teapot beside her bed and smashes it on your head.")
-                print("Princess: EWWW! Witch!")
+                st.write(user.get_species(), ": I'm a good witch, I promise. Just tell me what happened.")
+            else:
+                st.write(computer.get_species(), ": I'm a good witch I promise, just tell me what happened.")
+            sleep(2)
+            st.write("Boy: It was the other Witch! She punished us for eating some of her candy house by trying to cook us!")
+            sleep(2)
+            st.write("The door creaks open.")
+            sleep(2)
+            answer = st.text_input("Fight the Witch? y/n ")
+            while answer not in "yn":
+                answer = st.text_input("Choose either y or n: ")
+            if answer == "y":
+                answer1 = st.text_input("What kind of function is f(x)=x^4? ")
+                if answer1 == "quartic" or "Quartic":
+                    if user.get_species()=="Witch":
+                        st.write("You break the bottom of your broomstick off and drive it into the witch's chest. She is dead.")
+                        sleep(2)
+                        st.write("The two children stare blankly for a moment.")
+                        sleep(3)
+                        st.write("Boy: Woah. Thank you! You really are a good witch.")
+                    else:
+                        st.write("You take an arrow out of your quiver and charge at the witch. She parries but your agility allows you to strike quickly again. You drive it into her chest and she falls. She is dead.")
+                        sleep(2)
+                        st.write("The two children stare blankly for a moment.")
+                        sleep(2)
+                        st.write("Boy: Woah. Thank you. Here, take this.")
+                        st.write("The boy hands you 10 gold coins.")
+                        money = user.get_money() + 10
+                        user.set_money(money)
+                    user.set_friends("Girl")
+                    user.set_friends("Boy")
+                    sleep(3)
+                    st.write("You've made new friends!")
+                    st.write(user.get_friends())
+                else:
+                    st.write(user.get_species(), ": Let's just ignore it, we've got a job to do.")
+                    sleep(2)
+                    st.write("You quickly sweep and mop the house, dust the shelves, and shine the peppermint furniture.")
+                    sleep(2)
+                    st.write("The door creaks open.")
+                    sleep(2)
+                    st.write("Witch: Wow. It looks lovely in here!")
+                    sleep(2)
+                    st.write(computer.get_species(), ": Ha ha ha ha. ha yes thank you so much.")
+                    sleep(2)
+                    st.write("The Witch glares suspiciously at ", computer.get_species())
+                    sleep(2)
+                    st.write("Witch: Well thank you for a job well done, here is your payment!")
+                    sleep(3)
+                    new_health = user.get_health + 100
+                    user.set_health(new_health)
+                    st.write("Witch: I've healed you to full health my friends.")
+                    user.set_friends("Witch")
+                    sleep(3)
+                    st.write("The witch is now your friend!")
+                    st.write("Friends: ", user.get_friends())
+                
+def task4(user, computer):
+        st.write("↟𖠰↟𖠰 You begin another long walk within the forest. 𖠰↟𖠰𖠰")
+        sleep(2)
+        st.write("You stumble across a large cobblestone bridge which towers unnecessarily above a small stream, it seems almost useless to even go over it")
+        sleep(2)
+        st.write ("???: IT IS I...")
+        sleep(3)
+        st.write("R: ...Rumplestiltzkin!")
+        sleep(2)
+        st.write("R: Now that you've found me, you must answer my riddles 3 or you may never escape! >:D")
+        st.write("R: First...")
+        sleep(3)
+        riddleoneanswer = st.text_input("What feels like green paint, smells like green paint, but isn't green paint? ")
+        if riddleoneanswer == ("paint"):
+            st.write("R: WOAH you've answered my riddle one... and got it correct, i'm honestly stunned. Just as a reward you will answer just one more riddle... MY RIDDLE ONE!")
+        else:
+            st.write("R: heh heh, just as i suspected you got it UNBELIEVABLY incorrect. The only way to save you now is to answer one final riddle. MY RIDDLE ONE!")
+        riddletwoanswer = st.text_input("R: What is my name heh heh? ")
+        if riddletwoanswer == ("rumplestiltzkin") or ("Rumplestiltzkin"):
+            st.write("....")
+            sleep(3)
+            st.write("Rumplestiltzkin: I have absolutely no clue how you knew that...")
+            sleep(2)
+            st.write("Rumplestiltzkin: well a deal is a deal and I shall set you free, and with a reward I suppose. And of course access to my bridge!")
+            st.write(user.get_species(), ": oh... thanks i guess.")
+            money = user.get_money() + 10
+            user.set_money(money)
+            user.set_friends("Rumplestiltzkin")
+        else:
+            st.write("Rumplestiltzkin: L! haha you absolute bafoon that is just not my name. now you must pay the price of prices! 3 pieces of gold in payment for my riddles 3")
+            money = user.get_money() - 3
+            user.set_money(money)
+
+
+def task5(user, computer):
+        st.write("The witch and the elf have reached the end of the forest.")
+        sleep(3)
+        st.write("Ahead of them lies the Queen's castle. But the gates are wide open.")
+        sleep(3)
+        st.write(user.get_species(), ": If the gates are open I guess we can go inside.")
+        sleep(3)
+        st.write("You enter the castle and find a tall spiral staircase. Someone is snoring really loud at the top.")
+        sleep(4)
+        st.write(computer.get_species(), ": Who could that be?")
+        sleep(2)
+        st.write("The two of you start climbing the stairs and discover a beautiful woman asleep in bed.")
+        sleep(4)
+        st.write(computer.get_species(), ": According to this note only a true love's kiss will wake her up.")
+        sleep(4)
+        help = st.text_input("Do you kiss her? (y/n) ")
+        while help not in "yn":
+            help = st.text_input("Choose either y or n" )
+        if help == "y":
+            st.write("The princess's eyes flutter open.")
+            if user.get_species() == "Witch":
+                sleep(2)
+                st.write("She lays eyes on you and screams. She grabs the teapot beside her bed and smashes it on your head.")
+                sleep(4)
+                st.write("Princess: EWWW! Witch!")
                 health = user.get_health() - 30
                 user.set_health(health)
-                print("You fall to the floor in shock. You lost 30 health.")
-                print(user.get_species() + ": I'm a good witch! Why does everyone think I'm bad? :(")
-                print("Princess: I'm sorry. I jumped to conclusions. Let's get married!")
+                st.write("You fall to the floor in shock. You lost 30 health.")
+                sleep(3)
+                st.write(user.get_species(), ": I'm a good witch! Why does everyone think I'm bad? :(")
+                sleep(3)
+                st.write("Princess: I'm sorry. I jumped to conclusions. Let's get married!")
             else:
-                print("Princess: Oh! You saved me!")
-                print("She kisses you.")
-                print("Princess: Will you marry me?")
-                print(user.get_species() + ": Yes!")
+                st.write("Princess: Oh! You saved me!")
+                sleep(2)
+                st.write("She kisses you.")
+                sleep(2)
+                st.write("Princess: Will you marry me?")
+                sleep(2)
+                st.write(user.get_species(), ": Yes!")
             money = user.get_money() + 1000000
             user.set_money(money)
-            print("You now have " + user.get_money() + " moneys.")
-            print("And they lived happily ever after. The end.")
+            st.write("You now have", user.get_money(), " moneys.")
+            sleep(2)
+            st.write("And they lived happily ever after. The end.")
         else:
-            print("As you're standing beside the bed, two guards barge in unannounced.")
-            print("Guard 1: Are you the one's who poisoned the princess?")
-            print("Guard 2: Get them!!")
-            print("Without giving them a chance to deny, the two guards barge forward and put you in handcuffs.")
-            print("You're dragged off to the town prison where you're sentenced to a lifetime behind bars.")
-            print("And they lived not so happily ever after.")
+            st.write("As you're standing beside the bed, two guards barge in unannounced.")
+            sleep(3)
+            st.write("Guard 1: Are you the one's who poisoned the princess?")
+            sleep(3)
+            st.write("Guard 2: Get them!!")
+            sleep(2)
+            st.write("Without giving them a chance to deny, the two guards barge forward and put you in handcuffs.")
+            sleep(4)
+            st.write("You're dragged off to the town prison where you're sentenced to a lifetime behind bars.")
+            sleep(4)
+            st.write("And they lived not so happily ever after.")
 
 
 #Hobbit and Princess storyline
