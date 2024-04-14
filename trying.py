@@ -456,6 +456,7 @@ def update_stats(user, comp):
         print(user, comp)
         
 def instructions():
+    st.set_page_config("instructions")
     st.write("Welcome to the epic fairytale adventure program! \n In this program, you will be a character of your choice that gets placed in an adventure, along with your trusty sidekick. \n You will advance through the game.")
 
 main()
