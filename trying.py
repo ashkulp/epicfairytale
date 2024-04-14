@@ -368,32 +368,32 @@ def task_2(user, comp):
             st.write("You spared the monster, at the expense of the village! All the farmers sheep will be eaten. \n Your compassion was admirable but ill-fated.")
 
 def task_3(user, comp):    
-        print("The owner of the horse stables needs help \n He says, 'One of my farm hand got pneumonia and died, the other got the bubonic plauge and died! I need someone to help muck my horse stable!'\n If you help you will get covered in horse manure, the princess is very vain and will be upset if she gets dirty, \n and the hobbit will lose health because he is so short that he will accidentally ingest some of the manure as he is mucking the stable")
-        ahh = input ("Will you help muck the stables? (yes/no): ")
+        st.write("The owner of the horse stables needs help \n He says, 'One of my farm hand got pneumonia and died, the other got the bubonic plauge and died! I need someone to help muck my horse stable!'\n If you help you will get covered in horse manure, the princess is very vain and will be upset if she gets dirty, \n and the hobbit will lose health because he is so short that he will accidentally ingest some of the manure as he is mucking the stable")
+        ahh = st.text_input ("Will you help muck the stables? (yes/no): ")
         if ahh=="yes":
             if user.get_species()=="Hobbit":
                 user.set_health(50)
-            print("You need to figure out how many shovel fulls of manure you need to move \nEach shovel full will clear 1 square foot of space, the stable is 36ft by 60ft")
-            temp=input( "How many shovel fulls will you have to do to clear the entire stable: " )
+            st.write("You need to figure out how many shovel fulls of manure you need to move \nEach shovel full will clear 1 square foot of space, the stable is 36ft by 60ft")
+            temp=st.text_input( "How many shovel fulls will you have to do to clear the entire stable: " )
             if temp== "2160":
-                print("You need to know how many days it will take you to clear the stable. \n Each shovel will take 1 minute, but it is winter and the days are short so you can only work 6 hours each day. Remember that there are two of you so it will take half the time")
-                tem=input("How many days will it take you to clear the stable: ")
+                st.write("You need to know how many days it will take you to clear the stable. \n Each shovel will take 1 minute, but it is winter and the days are short so you can only work 6 hours each day. Remember that there are two of you so it will take half the time")
+                tem=st.text_input("How many days will it take you to clear the stable: ")
                 if tem=="3":
-                    print("Good job! The stable owner is so appreciative of your help that he will allow you to take a shower in his home before seeing you off.\nYou have gained morality points!")
+                    st.write("Good job! The stable owner is so appreciative of your help that he will allow you to take a shower in his home before seeing you off.\nYou have gained morality points!")
                     user.set_morality(1)
                 else:
-                    print("You have failed the stable owner, in response to your stupidity he says,'You are dirty and unhelpful! You better wish I never see you again or you will face the wrath of my meanist unicorn'\nYou have lost morality points :(")
+                    st.write("You have failed the stable owner, in response to your stupidity he says,'You are dirty and unhelpful! You better wish I never see you again or you will face the wrath of my meanist unicorn'\nYou have lost morality points :(")
                     user.set_morality(-1)
             else:
-                print("You have failed the stable owner, in response to your stupidity he says,'You are dirty and unhelpful! You better wish I never see you again or you will face the wrath of my meanist unicorn'\nYou have lost morality points :(")
+                st.write("You have failed the stable owner, in response to your stupidity he says,'You are dirty and unhelpful! You better wish I never see you again or you will face the wrath of my meanist unicorn'\nYou have lost morality points :(")
                 user.set_morality(-1)
         elif ahh=="no":
-            print("The stable owner is upset that you won't help him and says, 'You are fair too proud and vain. I will be celebrating the day you die, I will dance on your grave and graffiti your headstones'\nYou have lost morality points")
+            st.write("The stable owner is upset that you won't help him and says, 'You are fair too proud and vain. I will be celebrating the day you die, I will dance on your grave and graffiti your headstones'\nYou have lost morality points")
             user.set_morality(-1)
         else:
-            print("your input is invalid, try again")
+            st.write("your input is invalid, try again")
             task_3(user,comp)
-        print(user)
+        st.write(user)
             
         # 3 Mucking the horse stables
         #Good: They do it (and are smelly) Bad: They refuse because they are proud/lazy and lose respect 
