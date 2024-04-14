@@ -414,9 +414,51 @@ def task_4(user, comp):
                 st.write("Wow. That is cold. You lose some morality.")
             # 4 Helping a lost child (5 yrs and kinda snotty)
             # Good: help find their family Bad: leave child on the ground
-#def task_5(user, comp):    
-        # 5 Do you help Pamela (shes a bitch), she is going to lose her house and needs all your money, 
-        # good: yes bad: no
+def task_5(user, comp):
+    from time import sleep
+    st.write("You and the ", '''comp.get_species()''', "here a distressed wail from the otherside of town")
+    ahh=st.text_input(" Do you invistigate? (yes/no)")
+    if ahh=="yes":
+        st.write("As you approach you hear a belligerent woman yelling about an eviction notice\nThe ",'''comp.get_species()'''," asks, 'Are you sure we should investigate?'" )
+        sleep(.5)
+        st.write("You hesitate before responding 'If she needs help we should help her' \nAs you approach she becomes more erratic screaming,'I need $10,000 by tomorrow to stay in my house??? This is RIDICULOUS!!!!'")
+        st.write("A villager approaches you and says, 'That's Pamela she's awful, no one likes her because she is mean to everyone.'")
+        ahhh=st.text_input("Do you want to try to help Pamela?(yes/no) ")
+        if ahhh=="yes":
+            st.write("You go up to her and ask Pamela what's wrong\nShe screams'I'M GOING TO LOSE MY HOUSE, AN OGRE IS GOING TO EAT IT IF I DON'T GIVE HIM TEN THOUSAND DOLLARS BY TOMORROW MORNING!!!!")
+            if user.get_species()=="Hobbit":
+                st.write("You must convince the Princess to give all of her money to Pamela, so that the ogre doesn't eat Pamela's house")
+                note=input("Write a note convincing the Princess to give all of her money away:")
+                if len(note)>50:
+                    st.write("You have convinced the princess to give away all of her money!\nYou have gained morality points!")
+                    user.set_morality(3)
+                else:
+                    st.write("Your note was not convincing enough\n the Princess responds, 'This is ridiculous Pamela is an awful person and deserves any and all karma coming her way, including an ogre eating her house.")
+                    sleep(.5)
+                    st.write("You have lost morality points :(")
+                    user.set_morality(-3)
+            else:
+    
+                st.write("You contemplate giving your money away, if you do you'll have no more money, but Pamela needs it more than you do")
+                sleep(.9)
+                st.write('...right?')
+                st.write("The Hobbit looks up (because he is three foot six) at you with pleading eyes\nHe says,'It's the right thing to do, to give her the money. I mean we don't really need money, and you can always fall back on your trust fund'")
+                st.write("The Hobbit doesn't know that you don't have access to your trust fund for another 5 years")
+    
+                think=st.text_input("Do you give mean pamela ALL of your money? (yes/no) ")
+                if think=="yes":
+                    sleep(.5)
+                    st.write("Pamela thanks you before running into the woods to find the ogre")
+                elif think=="no":
+                    st.write("Pamela continues wailing as she comes to terms with the fact that her house and all possessions will be eaten by an ogre in the morning\n You lose morality points :(")
+                    user.set_morality(-3)
+        elif ahhh=="no":
+            st.write("You're a bad person and lose morality points")
+            user.set_morality(-3)
+    elif ahh=="no":
+        st.write("You're a bad person and lose morality points")
+        user.set_morality(-3)
+
 def ending(user, comp):
         from time import sleep
         st.write("You have reached the end of your journey, ",user.get_species(),"and it is time to discover whether you have achieved your goal of becoming a better person!" )
