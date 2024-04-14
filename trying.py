@@ -428,7 +428,7 @@ def task_5(user, comp):
             st.write("You go up to her and ask Pamela what's wrong\nShe screams'I'M GOING TO LOSE MY HOUSE, AN OGRE IS GOING TO EAT IT IF I DON'T GIVE HIM TEN THOUSAND DOLLARS BY TOMORROW MORNING!!!!")
             if user.get_species()=="Hobbit":
                 st.write("You must convince the Princess to give all of her money to Pamela, so that the ogre doesn't eat Pamela's house")
-                note=input("Write a note convincing the Princess to give all of her money away:")
+                note=st.text_input("Write a note convincing the Princess to give all of her money away:")
                 if len(note)>50:
                     st.write("You have convinced the princess to give away all of her money!\nYou have gained morality points!")
                     user.set_morality(3)
