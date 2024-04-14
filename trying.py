@@ -341,38 +341,38 @@ def task_2(user, comp):
         from time import sleep
     # update_stats(user, comp)  
     # 2 Mythicical sheep eating beast or feral pig
-        print("You and the ", comp.get_species(), "are talking over the results of the last task when... ")
+        st.write("You and the ", comp.get_species(), "are talking over the results of the last task when... ")
         sleep(.5)
-        print("you hear a scream coming from the town hall!")
+        st.write("you hear a scream coming from the town hall!")
         go = input("Go investigate? (y/n): ")
         if go == "n":
-            go = input("are you SURE? (y/n): ")
+            go = st.text_input("are you SURE? (y/n): ")
             if go == "n":
                 user.set_morality(-2)
-                print("Wow... you lose morality points for not caring about your town!")
-                print("A farmer runs up to you as you stand pointlessly in the middle of the town")
+                st.write("Wow... you lose morality points for not caring about your town!")
+                st.write("A farmer runs up to you as you stand pointlessly in the middle of the town")
             else:
                 user.set_morality(1)
-                print("Good choice. You enter the town hall and encounter a frazzled farmer.")
+                st.write("Good choice. You enter the town hall and encounter a frazzled farmer.")
         else:
             user.set_morality(2)
-            print("You encounter a frazzled farmer and ask what the matter is.")
-        print("He says 'Please help me! A evil beast is eating my sheep and I don't know what to do.'\n You and your companion head to the edge of the woods and encounter a wild beast!\n The beast has sharp teeth but strangly compassionate eyes. It roars at you.")
-        attack = input("Begin your attack? (y/n): ")
+            st.write("You encounter a frazzled farmer and ask what the matter is.")
+        st.write("He says 'Please help me! A evil beast is eating my sheep and I don't know what to do.'\n You and your companion head to the edge of the woods and encounter a wild beast!\n The beast has sharp teeth but strangly compassionate eyes. It roars at you.")
+        attack = st.text_input("Begin your attack? (y/n): ")
         monster = 50
         while attack == "y" and monster>0:
             if user.get_species()=="Princess":
                 monster -= (3*int(user.get_agility()))
             else:
                 monster -= 2*int(user.get_agility())
-            print("The monster wails and takes damage from your ", user.get_weapon())
+            st.write("The monster wails and takes damage from your ", user.get_weapon())
             attack=input("Keep attacking or say no and take pity on the poor beast (y/n): ")
         if monster<0:
             user.set_morality(2)
-            print("The monster finally collapses! \n You saved the town! If you had spared the monster, all the sheep would have been eaten. Good job!")
+            st.write("The monster finally collapses! \n You saved the town! If you had spared the monster, all the sheep would have been eaten. Good job!")
         else:
             user.set_morality(1)
-            print("You spared the monster, at the expense of the village! All the farmers sheep will be eaten. \n Your compassion was admirable but ill-fated.")
+            st.write("You spared the monster, at the expense of the village! All the farmers sheep will be eaten. \n Your compassion was admirable but ill-fated.")
 
 def task_3(user, comp):    
         print("The owner of the horse stables needs help \n He says, 'One of my farm hand got pneumonia and died, the other got the bubonic plauge and died! I need someone to help muck my horse stable!'\n If you help you will get covered in horse manure, the princess is very vain and will be upset if she gets dirty, \n and the hobbit will lose health because he is so short that he will accidentally ingest some of the manure as he is mucking the stable")
