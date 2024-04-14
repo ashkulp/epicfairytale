@@ -344,7 +344,7 @@ def task_2(user, comp):
         st.write("You and the ", comp.get_species(), "are talking over the results of the last task when... ")
         sleep(.5)
         st.write("you hear a scream coming from the town hall!")
-        go = input("Go investigate? (y/n): ")
+        go = st.text_input("Go investigate? (y/n): ")
         if go == "n":
             go = st.text_input("are you SURE? (y/n): ")
             if go == "n":
