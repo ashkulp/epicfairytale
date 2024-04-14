@@ -90,7 +90,7 @@ def main():
             user = Person("longbow", 0, 8, 100, "Elf", None, 69)
             computer = Person("broomstick", 5, 4, 100, "Witch", None, 63)
             
-        epic_story(user)
+        epic_story(user, computer)
     
 # Witch and Elf Storyline
 def epic_story(user, computer):
