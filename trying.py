@@ -398,20 +398,20 @@ def task_3(user, comp):
         # 3 Mucking the horse stables
         #Good: They do it (and are smelly) Bad: They refuse because they are proud/lazy and lose respect 
 def task_4(user, comp):    
-        print("You and the ", comp.get_species(), "are wandering around the town when you encounter a child crying on the sidewalk. She looks a little odd, with a unsettling green tint to her skin." )
-        help = input("Would you like to ask the child what is wrong? (y/n): ")
+        st.write("You and the ", comp.get_species(), "are wandering around the town when you encounter a child crying on the sidewalk. She looks a little odd, with a unsettling green tint to her skin." )
+        help = st.text_input("Would you like to ask the child what is wrong? (y/n): ")
         if help == "n":
             user.set_morality(-2)
-            print("You leave the child crying in the streets. Not a good look. You're going to lose some morality for that.")
+            st.write("You leave the child crying in the streets. Not a good look. You're going to lose some morality for that.")
         else:
-            print("The child wipes her runny nose and then tells you that she got lost and needs help to find her way back home....")
-            help= input("Do you help her find her way back home? (y/n): ")
+            st.write("The child wipes her runny nose and then tells you that she got lost and needs help to find her way back home....")
+            help= st.text_input("Do you help her find her way back home? (y/n): ")
             if help == "y":
                 user.set_morality(3)
-                print("How kind of you! You gain morality points and become a better person!")
+                st.write("How kind of you! You gain morality points and become a better person!")
             else:
                 user.set_morality(-2)
-                print("Wow. That is cold. You lose some morality.")
+                st.write("Wow. That is cold. You lose some morality.")
             # 4 Helping a lost child (5 yrs and kinda snotty)
             # Good: help find their family Bad: leave child on the ground
 #def task_5(user, comp):    
@@ -419,25 +419,25 @@ def task_4(user, comp):
         # good: yes bad: no
 def ending(user, comp):
         from time import sleep
-        print("You have reached the end of your journey, ",user.get_species(),"and it is time to discover whether you have achieved your goal of becoming a better person!" )
-        print("Your final morality score is ",user.get_morality())
+        st.write("You have reached the end of your journey, ",user.get_species(),"and it is time to discover whether you have achieved your goal of becoming a better person!" )
+        st.write("Your final morality score is ",user.get_morality())
         if user.get_morality()> 7:
-            print("Wow, you have really grown a lot. The villagers crowd around you...")
+            st.write("Wow, you have really grown a lot. The villagers crowd around you...")
+            st.write(.5)
+            st.write("HIP")
             sleep(.5)
-            print("HIP")
-            sleep(.5)
-            print("HIP")
+            st.write("HIP")
             sleep(.05)
-            print("HURRAY")
-            print("You have completed your quest to become a better ", user.get_species(), "along with your sidekick the", comp.get_species(),". Now you can look forward to your life as a better person.")
+            st.write("HURRAY")
+            st.write("You have completed your quest to become a better ", user.get_species(), "along with your sidekick the", comp.get_species(),". Now you can look forward to your life as a better person.")
         else:
-            print("Oh...")
+            st.write("Oh...")
             sleep(.5)
-            print("there is an awkward silence as the villagers gather around you grumbling under their breath")
+            st.write("there is an awkward silence as the villagers gather around you grumbling under their breath")
             sleep(.5)
-            print("Someone breaks the silence with an angry yell, and then a farmer advances towards you brandishing a pitchfork")
-            print("In your failure to be a better person, you have managed to anger the entire town. You turn to the ", comp.get_species(),"and shout RUN")
-            print("You flee the town in shame, never to return. Maybe next time you'll be a better person.")
+            st.write("Someone breaks the silence with an angry yell, and then a farmer advances towards you brandishing a pitchfork")
+            st.write("In your failure to be a better person, you have managed to anger the entire town. You turn to the ", comp.get_species(),"and shout RUN")
+            st.write("You flee the town in shame, never to return. Maybe next time you'll be a better person.")
             #ending
             #either their morality is high enough that they can become a better person and the town celebrates
             #or the town hates them for destroying their community
