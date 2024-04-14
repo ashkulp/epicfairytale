@@ -457,10 +457,10 @@ def task_2(user, comp):
         st.write("You and the ", comp.get_species(), "are talking over the results of the last task when... ")
         sleep(.5)
         st.write("you hear a scream coming from the town hall!")
-        go = st.text_input("Go investigate? (y/n): ")
-        if go == "n":
-            go = st.text_input("are you SURE? (y/n): ")
-            if go == "n":
+        go = st.text_input("Go investigate? (yes/no): ")
+        if go == "no":
+            go = st.text_input("are you SURE? (yes/no): ")
+            if go == "no":
                 user.set_morality(-2)
                 st.write("Wow... you lose morality points for not caring about your town!")
                 st.write("A farmer runs up to you as you stand pointlessly in the middle of the town")
@@ -471,8 +471,8 @@ def task_2(user, comp):
             user.set_morality(2)
             st.write("You encounter a frazzled farmer and ask what the matter is.")
         st.write("He says 'Please help me! A evil beast is eating my sheep and I don't know what to do.'\n You and your companion head to the edge of the woods and encounter a wild beast!\n The beast has sharp teeth but strangly compassionate eyes. It roars at you.")
-        attack = st.text_input("Begin your attack? (y/n): ")
-        if attack =="y":
+        attack = st.text_input("Begin your attack? (yes/no): ")
+        if attack =="yes":
             st.write("The monster wails and takes damage from your ", user.get_weapon())
             user.set_morality(2)
             st.write("The monster finally collapses! \n You saved the town! If you had spared the monster, all the sheep would have been eaten. Good job!")
@@ -509,14 +509,14 @@ def task_3(user, comp):
         #Good: They do it (and are smelly) Bad: They refuse because they are proud/lazy and lose respect 
 def task_4(user, comp):    
         st.write("You and the ", comp.get_species(), "are wandering around the town when you encounter a child crying on the sidewalk. She looks a little odd, with a unsettling green tint to her skin." )
-        help = st.text_input("Would you like to ask the child what is wrong? (y/n): ")
-        if help == "n":
+        help = st.text_input("Would you like to ask the child what is wrong? (yes/no): ")
+        if help == "no":
             user.set_morality(-2)
             st.write("You leave the child crying in the streets. Not a good look. You're going to lose some morality for that.")
         else:
             st.write("The child wipes her runny nose and then tells you that she got lost and needs help to find her way back home....")
-            help= st.text_input("Do you help her find her way back home? (y/n): ")
-            if help == "y":
+            help= st.text_input("Do you help her find her way back home? (yes/no): ")
+            if help == "yes":
                 user.set_morality(3)
                 st.write("How kind of you! You gain morality points and become a better person!")
             else:
