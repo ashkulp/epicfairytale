@@ -311,7 +311,7 @@ def town_story(user, computer):
     ending(user, computer)
     #tasks:
 def task_1(user, comp):    
-        print("You and the ", comp.get_species()," come across a troubled famer, her fence is broken. \n When she sees you she says,'Please help me! My fence needs fixing, but my arm is broken so I can't fix it myself. If I leave it broken all my cows will get out!")
+        st.write("You and the ", comp.get_species()," come across a troubled famer, her fence is broken. \n When she sees you she says,'Please help me! My fence needs fixing, but my arm is broken so I can't fix it myself. If I leave it broken all my cows will get out!")
         ahh=input("Will you help fix the fence or not (yes/no): ")
         if ahh=="yes":
             print ("In order to fix the fence you must hammer in all of the posts \n You will have to hammer in 6 nails, if you spell hammer wrong you will have failed to complete your task and lose morality points")
