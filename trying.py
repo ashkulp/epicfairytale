@@ -65,10 +65,10 @@ def main():
     st.set_page_config("instructions")
     instructions()
     user_char = st.text_input("What character would you like to be? Select 1 for princess, 2 for hobbit, 3 for witch, 4 for elf: ")
-    while user_char != 1 and user_char != 2 and user_char != 3 and user_char != 4:
+    while user_char != "1" and user_char != "2" and user_char != "3" and user_char != "4":
         user_char = input("Please choose a number between 1 and 4: ")
 
-    if user_char=="1" or user_char==2:
+    if user_char=="1" or user_char=="2":
         
         if user_char== 1:
             user=Person("fancy dagger",1000000,3,100,"Princess",0,64)
