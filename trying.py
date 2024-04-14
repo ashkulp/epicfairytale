@@ -94,6 +94,7 @@ def main():
     
 # Witch and Elf Storyline
 def epic_story(user, computer):
+    from time import sleep
     st.write("The witch and the elf are neighbors who live together in the forest.")
     st.write("They collectively decide that they want to make more friends, as they feel isolated from everyone else who lives in town.")
     if user.get_health() > 0:
