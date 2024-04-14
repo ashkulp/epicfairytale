@@ -80,13 +80,13 @@ def main():
 
         town_story(user, computer)
         
-    if user_char == 3 or user_char == 4:
+    if user_char == "3" or user_char == "4":
     
-        if user_char == 3:
+        if user_char == "3":
             user = Person("broomstick", 5, 4, 100, "Witch", None, 63)
             computer = Person("longbow", 0, 8, 100, "Elf", None, 69)
             
-        if user_char == 4:
+        if user_char == "4":
             user = Person("longbow", 0, 8, 100, "Elf", None, 69)
             computer = Person("broomstick", 5, 4, 100, "Witch", None, 63)
             
@@ -312,31 +312,31 @@ def town_story(user, computer):
     #tasks:
 def task_1(user, comp):    
         st.write("You and the ", comp.get_species()," come across a troubled famer, her fence is broken. \n When she sees you she says,'Please help me! My fence needs fixing, but my arm is broken so I can't fix it myself. If I leave it broken all my cows will get out!")
-        ahh=input("Will you help fix the fence or not (yes/no): ")
+        ahh=st.text_input("Will you help fix the fence or not (yes/no): ")
         if ahh=="yes":
-            print ("In order to fix the fence you must hammer in all of the posts \n You will have to hammer in 6 nails, if you spell hammer wrong you will have failed to complete your task and lose morality points")
+            st.write ("In order to fix the fence you must hammer in all of the posts \n You will have to hammer in 6 nails, if you spell hammer wrong you will have failed to complete your task and lose morality points")
             count=0
             nail="correct"
             while count<6 and nail=="correct":
-                write=input("Type out hammer: ")
+                write=st.text_input("Type out hammer: ")
                 if write=="hammer":
                     nail="correct"
                     count+=1
                 else:
                     nail="not"
-                    print("you have failed the famer, she is crying in distress as all of her cows escape \n you have lost morality points")
+                    st.write("you have failed the famer, she is crying in distress as all of her cows escape \n you have lost morality points")
                     user.set_morality(-1)
             if nail=="correct":
-                print("the farmer says, 'Thank you for fixing my fence! I will forever be grateful for your help.' \n You have gained moarality points")
+                st.write("the farmer says, 'Thank you for fixing my fence! I will forever be grateful for your help.' \n You have gained moarality points")
                 user.set_morality(1)
 
         elif ahh=="no":
             user.set_morality(-1)
-            print("The farmer starts crying as you deny her request and yells after you, 'You two are evil and I hope you never experience joy again!'\nYou have lost morality points")
+            st.write("The farmer starts crying as you deny her request and yells after you, 'You two are evil and I hope you never experience joy again!'\nYou have lost morality points")
         else:
-            print("error, your input is invalid try again")
+            st.write("error, your input is invalid try again")
             task_1(user,comp)
-        print(user)
+        st.write(user)
             
 
         # 1 fix a broken fence so cows don't escape
