@@ -366,7 +366,7 @@ def task_2(user, comp):
             else:
                 monster -= 2*int(user.get_agility())
             st.write("The monster wails and takes damage from your ", user.get_weapon())
-            attack=input("Keep attacking or say no and take pity on the poor beast (y/n): ")
+            attack=st.text_input("Keep attacking or say no and take pity on the poor beast (y/n): ")
         if monster<0:
             user.set_morality(2)
             st.write("The monster finally collapses! \n You saved the town! If you had spared the monster, all the sheep would have been eaten. Good job!")
