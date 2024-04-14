@@ -1,5 +1,5 @@
 import time
-
+import streamlit as st
 class Person:
 
     def __init__(self, weapon = None, money = None, agility = None, health = None, species = None, morality = None, height = None):
@@ -456,6 +456,6 @@ def update_stats(user, comp):
         print(user, comp)
         
 def instructions():
-    print("Welcome to the epic fairytale adventure program! \n In this program, you will be a character of your choice that gets placed in an adventure, along with your trusty sidekick. \n You will advance through the game.")
+    st.write("Welcome to the epic fairytale adventure program! \n In this program, you will be a character of your choice that gets placed in an adventure, along with your trusty sidekick. \n You will advance through the game.")
 
 main()
