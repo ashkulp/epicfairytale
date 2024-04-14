@@ -114,7 +114,7 @@ def epic_story(user, computer):
         task5(user, computer)
 
 def task1(user, computer):
-    from time import sleep
+        from time import sleep
         st.write("𖠰↟𖠰𖠰", "The witch and the elf begin their journey in the forest.", "𖠰𖠰↟𖠰↟")
         sleep(1)
         st.write("They're walking together when all of a sudden, a girl in a red cape runs by.")
@@ -177,7 +177,7 @@ def task1(user, computer):
             st.write("GAME OVER")
 
 def task2(user, computer):
-    from time import sleep
+        from time import sleep
         st.write("After encountering the wolf, the witch and the elf enter the town.")
         sleep(3)
         st.write(user.get_species(), ": I smell pie!")
@@ -207,7 +207,7 @@ def task2(user, computer):
             st.write("You've lost 30 health :(")
 
 def task3(user, computer):
-    from time import sleep
+        from time import sleep
         st.write("The witch and the elf now make their way through town and spot a candy house.")
         sleep(2)
         st.write("You see a figure approach you....")
@@ -317,7 +317,7 @@ def task3(user, computer):
                     st.write("Friends: ", user.get_friends())
                 
 def task4(user, computer):
-    from time import sleep
+        from time import sleep
         st.write("↟𖠰↟𖠰 You begin another long walk within the forest. 𖠰↟𖠰𖠰")
         sleep(2)
         st.write("You stumble across a large cobblestone bridge which towers unnecessarily above a small stream, it seems almost useless to even go over it")
@@ -352,7 +352,7 @@ def task4(user, computer):
 
 
 def task5(user, computer):
-    from time import sleep
+        from time import sleep
         st.write("The witch and the elf have reached the end of the forest.")
         sleep(3)
         st.write("Ahead of them lies the Queen's castle. But the gates are wide open.")
