@@ -323,15 +323,13 @@ def task_1(user, comp):
                 st.write("you have failed the famer, she is crying in distress as all of her cows escape \n you have lost morality points")
                 user.set_morality(-1)
             if nail=="correct":
-                st.write("the farmer says, 'Thank you for fixing my fence! I will forever be grateful for your help.' \n You have gained moarality points")
+                st.write("the farmer says, 'Thank you for fixing my fence! I will forever be grateful for your help.' \n You have gained morality points")
                 user.set_morality(1)
 
         elif ahh=="no":
             user.set_morality(-1)
             st.write("The farmer starts crying as you deny her request and yells after you, 'You two are evil and I hope you never experience joy again!'\nYou have lost morality points")
-        else:
-            st.write("error, your input is invalid try again")
-            task_1(user,comp)
+
         st.write(user)
             
 
@@ -390,9 +388,6 @@ def task_3(user, comp):
         elif ahh=="no":
             st.write("The stable owner is upset that you won't help him and says, 'You are fair too proud and vain. I will be celebrating the day you die, I will dance on your grave and graffiti your headstones'\nYou have lost morality points")
             user.set_morality(-1)
-        else:
-            st.write("your input is invalid, try again")
-            task_3(user,comp)
         st.write(user)
             
         # 3 Mucking the horse stables
