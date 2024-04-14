@@ -359,7 +359,7 @@ def task_2(user, comp):
             st.write("You encounter a frazzled farmer and ask what the matter is.")
         st.write("He says 'Please help me! A evil beast is eating my sheep and I don't know what to do.'\n You and your companion head to the edge of the woods and encounter a wild beast!\n The beast has sharp teeth but strangly compassionate eyes. It roars at you.")
         attack = st.text_input("Begin your attack? (y/n): ")
-        if attack =="y"
+        if attack =="y":
             st.write("The monster wails and takes damage from your ", user.get_weapon())
             user.set_morality(2)
             st.write("The monster finally collapses! \n You saved the town! If you had spared the monster, all the sheep would have been eaten. Good job!")
