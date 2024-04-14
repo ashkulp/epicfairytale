@@ -70,11 +70,11 @@ def main():
 
     if user_char=="1" or user_char=="2":
         
-        if user_char== 1:
+        if user_char== "1":
             user=Person("fancy dagger",1000000,3,100,"Princess",0,64)
             computer=Person("club",4,7,60,"Hobbit",0,42)
                 
-        if user_char == 2:
+        if user_char == "2":
             computer=Person("fancy dagger",1000000,3,100,"Princess",0,64)
             user=Person("club",4,7,60,"Hobbit",0,42)
 
