@@ -317,7 +317,7 @@ def task_1(user, comp):
             st.write ("In order to fix the fence you must hammer in all of the posts \n You will have to hammer in 6 nails, if you spell hammer wrong you will have failed to complete your task and lose morality points")
             write=st.text_input("Type out hammer: ")
             if write=="hammer":
-                nail=="correct"
+                nail="correct"
             else:
                 nail="not"
                 st.write("you have failed the famer, she is crying in distress as all of her cows escape \n you have lost morality points")
