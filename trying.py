@@ -416,10 +416,10 @@ def task_4(user, comp):
             # Good: help find their family Bad: leave child on the ground
 def task_5(user, comp):
     from time import sleep
-    st.write("You and the ", '''comp.get_species()''', "here a distressed wail from the otherside of town")
+    st.write("You and the ", comp.get_species(), "here a distressed wail from the otherside of town")
     ahh=st.text_input(" Do you invistigate? (yes/no)")
     if ahh=="yes":
-        st.write("As you approach you hear a belligerent woman yelling about an eviction notice\nThe ",'''comp.get_species()'''," asks, 'Are you sure we should investigate?'" )
+        st.write("As you approach you hear a belligerent woman yelling about an eviction notice\nThe ",comp.get_species()," asks, 'Are you sure we should investigate?'" )
         sleep(.5)
         st.write("You hesitate before responding 'If she needs help we should help her' \nAs you approach she becomes more erratic screaming,'I need $10,000 by tomorrow to stay in my house??? This is RIDICULOUS!!!!'")
         st.write("A villager approaches you and says, 'That's Pamela she's awful, no one likes her because she is mean to everyone.'")
