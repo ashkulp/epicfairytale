@@ -426,7 +426,7 @@ def town_story(user, computer):
     ending(user, computer)
     #tasks:
 def task_1(user, comp):    
-        st.write("You and the ", comp.get_species()," come across a troubled famer, her fence is broken. \n When she sees you she says,'Please help me! My fence needs fixing, but my arm is broken so I can't fix it myself. If I leave it broken all my cows will get out!")
+        st.write("You and the ", comp.get_species()," come across a troubled farmer, her fence is broken. \n When she sees you she says,'Please help me! My fence needs fixing, but my arm is broken so I can't fix it myself. If I leave it broken all my cows will get out!")
         ahh=st.text_input("Will you help fix the fence or not (yes/no): ")
         if ahh=="yes":
             st.write ("In order to fix the fence you must hammer in all of the posts \n You will have to hammer in 6 nails, if you spell hammer wrong you will have failed to complete your task and lose morality points")
@@ -435,7 +435,7 @@ def task_1(user, comp):
                 nail="correct"
             else:
                 nail="not"
-                st.write("you have failed the famer, she is crying in distress as all of her cows escape \n you have lost morality points")
+                st.write("you have failed the farmer, she is crying in distress as all of her cows escape \n you have lost morality points")
                 user.set_morality(-1)
             if nail=="correct":
                 st.write("the farmer says, 'Thank you for fixing my fence! I will forever be grateful for your help.' \n You have gained morality points")
@@ -543,7 +543,7 @@ def task_5(user, comp):
                     st.write("You have convinced the princess to give away all of her money!\nYou have gained morality points!")
                     user.set_morality(3)
                 else:
-                    st.write("Your note was not convincing enough\n the Princess responds, 'This is ridiculous Pamela is an awful person and deserves any and all karma coming her way, including an ogre eating her house.")
+                    st.write("Your note was not convincing enough\n The Princess responds, 'This is ridiculous Pamela is an awful person and deserves any and all karma coming her way, including an ogre eating her house.")
                     sleep(.5)
                     st.write("You have lost morality points :(")
                     user.set_morality(-3)
@@ -575,7 +575,7 @@ def ending(user, comp):
         st.write("Your final morality score is ",user.get_morality())
         if user.get_morality()> 7:
             st.write("Wow, you have really grown a lot. The villagers crowd around you...")
-            st.write(.5)
+            sleep(.5)
             st.write("HIP")
             sleep(.5)
             st.write("HIP")
