@@ -68,7 +68,7 @@ def main():
     while user_char != 1 and user_char != 2 and user_char != 3 and user_char != 4:
         user_char = int(input("Please choose a number between 1 and 4: "))
 
-    if user_char==1 or user_char==2:
+    if user_char=="1" or user_char==2:
         
         if user_char== 1:
             user=Person("fancy dagger",1000000,3,100,"Princess",0,64)
