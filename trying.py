@@ -1,3 +1,4 @@
+st.set_page_config("instructions")
 import time
 import streamlit as st
 class Person:
@@ -63,7 +64,7 @@ class Person:
 
 def main():
     instructions()
-    user_char = int(input("What character would you like to be? Select 1 for princess, 2 for hobbit, 3 for witch, 4 for elf: "))
+    user_char = st.text_input("What character would you like to be? Select 1 for princess, 2 for hobbit, 3 for witch, 4 for elf: "))
     while user_char != 1 and user_char != 2 and user_char != 3 and user_char != 4:
         user_char = int(input("Please choose a number between 1 and 4: "))
 
@@ -456,7 +457,6 @@ def update_stats(user, comp):
         print(user, comp)
         
 def instructions():
-    st.set_page_config("instructions")
     st.write("Welcome to the epic fairytale adventure program! \n In this program, you will be a character of your choice that gets placed in an adventure, along with your trusty sidekick. \n You will advance through the game.")
 
 main()
